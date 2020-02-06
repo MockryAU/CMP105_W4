@@ -1,9 +1,11 @@
 #include "Level.h"
+#include "Player.h"
 
 Level::Level(sf::RenderWindow* hwnd, Input* in)
 {
 	window = hwnd;
 	input = in;
+	testSprite.setInput(in);
 
 	// initialise game objects
 	texture.loadFromFile("gfx/Mushroom.png");
@@ -33,7 +35,7 @@ void Level::handleInput(float dt)
 // Update game objects
 void Level::update(float dt)
 {
-	
+	testSprite.handleInput(dt);
 }
 
 // Render level
